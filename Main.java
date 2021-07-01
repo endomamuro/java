@@ -18,24 +18,26 @@ class Main{
     Vagas vaga10= new Vagas();
     Vagas vaga11= new Vagas();
     Vagas vaga12= new Vagas();
+    //DECLARAÇÃO DE VARIÁVEIS
     
-    for(int i=90;i>=90;i--){
+    
+    for(int i=90;i>=90;i--){     //"FOR" SERVINDO PARA QUANDO SE DESEJA VOLTAR PARA O MENU PARA FAZER MAIS ALTERAÇÕES
         System.out.println("\nDigite o número referente ao que deseja:\n\n1.Guardar carro no estacionamento\n2.Retirar carro do estacionamento\n3.Verificar vagas no estacionamento\n");
-        int num = input.nextInt();
+        int num = input.nextInt(); //INPUT PARA SELECIONAR SE DESEJA GUARDAR RETIRAR OU VERIFICAR
         switch(num){
-            case 1 -> {
+            case 1 -> {            //SISTEMA IF PARA AVERIGUAR SE ESTÁ DISPONIVEL A VAGA
                 if(disponibilidade[0]==true){
-                    System.out.println("Informe o Modelo do Carro");
+                    System.out.println("Informe o Modelo do Carro"); //INPUT PARA GET/SET
                     input.nextLine();
                     modeloCarro = input.nextLine();                    
                     vaga1.setCarro(modeloCarro);
                     System.out.println("Informe a Placa do Carro");
                     placaCarro = input.nextLine();
                     vaga1.setPlacas(placaCarro);
-                    vaga1.guardarCarro();
+                    vaga1.guardarCarro();            //INICIA TEMPO NA VAGA
                     disponibilidade[0]=false;
                     System.out.print("Pode estacionar na vaga 1\n\n");
-                }else if(disponibilidade[0]==false && disponibilidade[1] ==true){
+                }else if(disponibilidade[0]==false && disponibilidade[1] ==true){ //CONDIÇÃO ONDE ANTERIOR ESTÁ OCUPADO E ATUAL ESTÁ LIVRE
                     System.out.println("Informe o Modelo do Carro");
                     input.nextLine();
                     modeloCarro = input.nextLine();
@@ -162,11 +164,11 @@ class Main{
                 }
                 break;
             }
-            case 2 -> {
+            case 2 -> {                                         //OPÇÃO ONDE RETIRA O CARRO
                 System.out.println("Qual a vaga do carro?");
                 for(int j=1;j<100;j++){
                     int num1 = input.nextInt();
-                    switch(num1){
+                    switch(num1){                               //SWITCH PRA DETERMINAR A VAGA
                         case 1:
                             vaga1.calcularValor();
                             disponibilidade[0]=false;
@@ -234,7 +236,7 @@ class Main{
                 break;
             }
             
-            case 3 -> {
+            case 3 -> {              //VERIFICAR INFORMAÇÕES
                 System.out.println("Deseja verificar qual vaga?");
                 int num2 = input.nextInt();
                 for(int count=101;count>100;count--)
@@ -293,4 +295,3 @@ class Main{
                 break;
         }
         }}}}
-//Guardar Carro e Informações ta OK
