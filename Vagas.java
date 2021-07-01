@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Vagas{
     private String tipoCarro;
-    int valor=0;
-    int valorprov=0;
+    private int valor=0;
+    private int valorprov=0;
     private String placas;
-    LocalDateTime inicio;
-    LocalDateTime momento;
-    LocalDateTime fim;
-    long diferenca;
-    long diferencam;
+    private LocalDateTime inicio;
+    private LocalDateTime momento;
+    private LocalDateTime fim;
+    private long diferenca;
+    private long diferencam;
     public void setCarro(String modelo){
         tipoCarro = modelo;
     }
@@ -27,7 +27,7 @@ public class Vagas{
     public void calcularValor(){
         fim = LocalDateTime.now();
         diferenca = inicio.until(fim, ChronoUnit.HOURS);
-        for(int i=0;i<diferenca;i++){
+        for(int i=0;i<=diferenca;i++){
             valor=valor+5;}
         System.out.println("O tempo estacionado foi de "+diferenca+" Horas");
         System.out.println("O valor a se pagar é de:"+valor);
